@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import com.apicliente.demo.domain.dto.responseDto;
 import com.apicliente.demo.domain.dto.clienteDto;
 import com.apicliente.demo.domain.entity.cliente;
-import com.apicliente.demo.domain.enumeration.status;
+import com.apicliente.demo.domain.enumeration.Status;
 import com.apicliente.demo.domain.repository.clienteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,11 @@ public class clienteService {
 
     clienteRepository clienteRepository;
 
-    public responseDto savecliente
+    public responseDto savecliente(Cliente cliente){
+        responseDto.setId(clienteRepository.save(cliente).getId());
+        responseDto.setMenssage(setMenssage:"Usuário incluído com sucesso...");
+        responseDto.setStatus(Status.SUCCESS.value());
+    }
 
     public List<clienteDto> getAlClienteDTOs(){
         List <clienteDto>

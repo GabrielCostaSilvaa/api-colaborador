@@ -16,26 +16,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "Cliente")
 @Data
 @NoArgsConstructor
 
-public class cliente {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(name="nome")
+    @Column(name = "nome")
     @NotBlank(message="Nome obrigatório")
     @Length(message="Nome com no máximo 50 caracteres",max=50)
-    String CPF;
-    @Column(name="CPF")
+    String nome;
+    @Column(name = "CPF")
     @NotBlank(message="CPF obrigatório")
-    @Length(message="CPF com no máximo 11 caracteres",max=11)
+    @Length(message = "CPF com no máximo 11 caracteres",max=11)
+    String CPF;
+    @Column(dataNascimento ="Data de Nascimento")
+    @NotBlank(message="Insira data de nascimento")
+    @Length(message="Data de nascimento com no máximo 8 caracteres. ex: 22072000", max=30)
     String dataNascimento;
-    @Column(dataNascimento="Data de Nascimento")
-    @NotBlank
-    @
-
     
     
 }
