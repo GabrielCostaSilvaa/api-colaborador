@@ -13,28 +13,55 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 
-
 @Service
 @AllArgsConstructor
 public class clienteService {
-
+    
     @Autowired
     private ModelMapper modelMapper;
 
     @Autowired
     private responseDto responseDto;
 
+    @Autowired
+    private clienteDto clienteDto;
+
     clienteRepository clienteRepository;
 
-    public responseDto savecliente(Cliente cliente){
-        responseDto.setId(clienteRepository.save(cliente).getId());
-        responseDto.setMenssage(setMenssage:"Usuário incluído com sucesso...");
-        responseDto.setStatus(Status.SUCCESS.value());
+    public List<cliente> getAllclientes() {
+        List<cliente> listAllclientes = clienteRepository.findAll();
+        return listAllclientes;
     }
 
-    public List<clienteDto> getAlClienteDTOs(){
-        List <clienteDto>
-
+    public clienteDto updatecliente(cliente cliente){
+        clienteDto.setId(cliente.getId());
+        if (clienteRepository.existsById(cliente.getId())) {
+            
+            clienteRepository.save(cliente);
+        } else {
+            
+        }
+        return clienteDto;
     }
-    
+
+    public clienteDto savecliente(cliente cliente) {
+        clienteRepository.save(cliente);
+        clienteDto.setCPF(cliente.getCpf());
+        clienteDto.setDatanascimento(cliente.getDatanascimento());
+        clienteDto.setId(cliente.getId());
+        clienteDto.setNome(cliente.getNome());
+        clienteDto.setSexo(cliente.getSexo());
+        return clienteDto;
+    }
+
+    public clienteDto deletecliente(Long id) {
+        clienteDto.setId(id);
+        if (clienteRepository.existsById(id)) {
+            clienteRepository.deleteById(id);
+        } else {
+
+        }
+        return clienteDto;
+    }
 }
+

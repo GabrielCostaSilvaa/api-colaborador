@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class DefaultExceptionModal {
+public class DefaultExceptionModel {
     private int status;
     private String message;
     private ZonedDateTime timestamp;
