@@ -1,4 +1,4 @@
-package com.apicliente.demo.domain.config;
+package com.apicolaborador.demo.domain.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

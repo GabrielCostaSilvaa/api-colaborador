@@ -1,13 +1,13 @@
-package com.apicliente.demo.domain.enumeration;
+package com.apicolaborador.demo.domain.enumeration;
 
-public enum Status {
+public enum status {
     SUCCESS(1),  
     WARNING(2),  
     ERROR(3);    
 
     private final int value;
 
-    Status(int value) {
+    status(int value) {
         this.value = value;
     }
 

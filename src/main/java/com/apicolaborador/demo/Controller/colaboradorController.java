@@ -1,12 +1,12 @@
-package com.apicliente.demo.Controller;
+package com.apicolaborador.demo.Controller;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import com.apicliente.demo.domain.dto.clienteDto;
-import com.apicliente.demo.domain.entity.cliente;
-import com.apicliente.demo.domain.service.clienteService;
+import com.apicolaborador.demo.domain.dto.colaboradorDto;
+import com.apicolaborador.demo.domain.entity.colaborador;
+import com.apicolaborador.demo.domain.service.colaboradorService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,32 +23,32 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/cliente")
-public class clienteController {
+@RequestMapping("/colaborador")
+public class colaboradorController {
 
     @Autowired
-    private clienteService clienteService;
+    private colaboradorService colaboradorService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public clienteDto savecliente(@Valid @RequestBody cliente cliente) {
-        return clienteService.savecliente(cliente);
+    public colaboradorDto savecolaborador(@Valid @RequestBody colaborador colaborador) {
+        return colaboradorService.savecolaborador(colaborador);
     }
 
 
     @PutMapping
-    public clienteDto updatedcliente(@Valid @RequestBody cliente cliente){
-        return clienteService.updatecliente(cliente);
+    public colaboradorDto updatedcolaborador(@Valid @RequestBody colaborador colaborador){
+        return colaboradorService.updatecolaborador(colaborador);
     }
 
     @DeleteMapping(value = "/{id}")
-    public clienteDto deletecliente(@Valid @PathVariable Long id){
-        return clienteService.deletecliente(id);
+    public colaboradorDto deletecolaborador(@Valid @PathVariable Long id){
+        return colaboradorService.deletecolaborador(id);
     }
 
     @GetMapping(value = "/list")
-    public List<cliente> getAllclientes(){
-        return clienteService.getAllclientes();
+    public List<colaborador> getAllcolaboradors(){
+        return colaboradorService.getAllcolaboradors();
     }
     
 }

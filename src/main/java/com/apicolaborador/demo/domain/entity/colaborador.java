@@ -1,65 +1,57 @@
-package com.apicliente.demo.domain.entity;
+package com.apicolaborador.demo.domain.entity;
 
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name= "enderecos")
+@Table(name= "colaborador")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-
-public class endereco {
+public class colaborador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "cep")
+    @Column(name = "cpf")
+    @CPF
     @NotBlank
-    private String cep;
+    private String cpf;
 
-    @Column(name = "rua")
+    @Column(name = "nome")
+    @Pattern(regexp="^[A-Za-z]*$",message = "Nome invalido")
+    @Length(max = 50)
     @NotBlank
-    private String rua;
-
-    @Column(name = "bairro")
-    @NotBlank
-    private String bairro;
+    private String nome;
     
-    @Column(name = "numero")
-    @NotNull
-    private Integer numero;
+    @Column(name = "setor")
+    @Pattern(regexp="^[A-Za-z]*$", message = "setor inválido")
+    @Length(max = 50)
+    @NotBlank
+    private String setor;
     
-    @Column(name = "cidade")
-    @NotBlank
-    private String cidade;
-
-    @Column(name = "uf")
-    @NotBlank
-    private String uf;
-
-    @OneToOne(mappedBy = "endereco")
-    private cliente cliente;
     
 }

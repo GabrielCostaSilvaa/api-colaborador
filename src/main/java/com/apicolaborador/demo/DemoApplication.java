@@ -1,4 +1,4 @@
-package com.apicliente.demo;
+package com.apicolaborador.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

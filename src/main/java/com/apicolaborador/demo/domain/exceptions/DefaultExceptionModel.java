@@ -1,4 +1,4 @@
-package com.apicliente.demo.domain.exceptions;
+package com.apicolaborador.demo.domain.exceptions;
 
 import java.time.ZonedDateTime;
 import java.util.List;

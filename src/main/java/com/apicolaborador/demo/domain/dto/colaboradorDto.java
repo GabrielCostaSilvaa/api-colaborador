@@ -1,4 +1,4 @@
-package com.apicliente.demo.domain.dto;
+package com.apicolaborador.demo.domain.dto;
 
 import java.util.Date;
 import lombok.AllArgsConstructor;
@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class clienteDto {
+public class colaboradorDto {
     Long id;
     String Nome; 
     String CPF;
-    String sexo;
-    Date datanascimento;
+    String setor;
 }

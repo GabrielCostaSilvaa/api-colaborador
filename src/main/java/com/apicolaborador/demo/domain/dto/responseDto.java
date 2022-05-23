@@ -1,4 +1,4 @@
-package com.apicliente.demo.domain.dto;
+package com.apicolaborador.demo.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.apicliente.demo;
+package com.apicolaborador.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
-package com.apicliente.demo.domain.config;
+package com.apicolaborador.demo.domain.config;
 
-import com.apicliente.demo.domain.dto.responseDto;
+import com.apicolaborador.demo.domain.dto.responseDto;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
